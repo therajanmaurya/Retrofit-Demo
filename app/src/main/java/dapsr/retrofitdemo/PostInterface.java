@@ -15,11 +15,11 @@ public interface PostInterface {
     /**
      *
      * @param category category It of the post
-     * @param page     Pagination For getting the post
+     *
      * @param listCallback  get ArrayList of All post of category It
      */
     @GET("/weather")
-    void getCategoryPosts(@Query("q") int category, @Query("page") int page, Callback<List<String>> listCallback);
+    void getCategoryPosts(@Query("q") int category , Callback<List<String>> listCallback);
 
 //    @GET("/media")
 //    void getCoverImage(@Query("post_parent") int media, Callback<List<ImagePoJo>> imagePoJoCallback);
