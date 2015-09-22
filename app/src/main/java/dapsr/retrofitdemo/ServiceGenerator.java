@@ -40,7 +40,7 @@ public class ServiceGenerator
 		Gson gson = new Gson();
 		RestAdapter.Builder builder = new RestAdapter.Builder()
 				.setEndpoint(baseUrl)
-				.setLogLevel(RestAdapter.LogLevel.FULL).setLog(new AndroidLog("DUKHABAR POST"))
+				.setLogLevel(RestAdapter.LogLevel.FULL).setLog(new AndroidLog("Retrofit-Demo"))
 				.setConverter(new GsonConverter(gson))
 				.setClient(new OkClient(new OkHttpClient()));
 
