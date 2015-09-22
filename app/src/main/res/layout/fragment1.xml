@@ -9,7 +9,23 @@
         android:text="Fragment 111"
         android:id="@+id/textView"
         android:layout_gravity="center_horizontal"
+        android:layout_below="@+id/update"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <EditText
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/editText"
         android:layout_alignParentTop="true"
+        android:layout_marginTop="100dp" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Update"
+        android:id="@+id/update"
+        android:layout_below="@+id/editText"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="236dp" />
+        android:layout_marginTop="34dp" />
 </RelativeLayout>

@@ -6,6 +6,7 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.EditText;
 
 /**
  * Created by rajanmaurya on 22/9/15.
@@ -15,9 +16,10 @@ public class Fragment1 extends Fragment {
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-
-
         View layout = inflater.inflate(R.layout.fragment1, container, false);
+
+        EditText editText = (EditText)layout.findViewById(R.id.editText);
+
 
 
         return layout;
