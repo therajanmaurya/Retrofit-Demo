@@ -1,7 +1,6 @@
 package dapsr.retrofitdemo;
 
-import java.util.List;
-
+import dapsr.retrofitdemo.POJO.Pojo;
 import retrofit.Callback;
 import retrofit.http.GET;
 import retrofit.http.Query;
@@ -19,7 +18,7 @@ public interface PostInterface {
      * @param listCallback  get ArrayList of All post of category It
      */
     @GET("/weather")
-    void getCategoryPosts(@Query("q") int category , Callback<List<String>> listCallback);
+    void getCategoryPosts(@Query("q") String category , Callback<Pojo> listCallback);
 
 //    @GET("/media")
 //    void getCoverImage(@Query("post_parent") int media, Callback<List<ImagePoJo>> imagePoJoCallback);
