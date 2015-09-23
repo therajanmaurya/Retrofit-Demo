@@ -33,19 +33,19 @@ public class Main {
     }
 
     public float getTempMin() {
-        return tempMin;
+        return temp_min;
     }
 
     public void setTempMin(float tempMin) {
-        this.tempMin = tempMin;
+        this.temp_min = tempMin;
     }
 
     public float getTempMax() {
-        return tempMax;
+        return temp_max;
     }
 
     public void setTempMax(float tempMax) {
-        this.tempMax = tempMax;
+        this.temp_max = tempMax;
     }
 
     public float getSeaLevel() {
@@ -65,8 +65,8 @@ public class Main {
     }
 
     public int humidity;
-    public float tempMin;
-    public float tempMax;
+    public float temp_min;
+    public float temp_max;
     public float seaLevel;
     public float grndLevel;
 
