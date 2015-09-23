@@ -30,6 +30,12 @@ public class Fragment1 extends Fragment {
 
         final EditText editText = (EditText)layout.findViewById(R.id.editText);
         final TextView textView = (TextView) layout.findViewById(R.id.textView);
+        final TextView lat = (TextView) layout.findViewById(R.id.textView2);
+        final TextView sky = (TextView) layout.findViewById(R.id.textView3);
+        final TextView temp = (TextView) layout.findViewById(R.id.textView4);
+        final TextView temp_max = (TextView) layout.findViewById(R.id.textView5);
+        final TextView temp_min = (TextView) layout.findViewById(R.id.textView6);
+        final TextView wind = (TextView) layout.findViewById(R.id.textView7);
         Button button = (Button) layout.findViewById(R.id.update);
         button.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -40,11 +46,22 @@ public class Fragment1 extends Fragment {
                     @Override
                     public void success(Pojo pojo, Response response) {
 
-                        textView.setText("" +pojo.getCoord().getLat() + "\n"
-                                            + pojo.getWeather().get(0).getDescription()+"\n"
-                                            + pojo.getMain().getTemp() + "\n"
-                                            +"max temp" + pojo.getMain().getTempMax() +"\n"
-                                            + pojo.getWind().getSpeed());
+                        lat.setText("latitude and longitude :" +  pojo.getCoord().getLat() + "and " +  pojo.getCoord().getLon() );
+                        sky.setText("Weather sky :" + pojo.getWeather().get(0).getDescription() );
+                        temp.setText("Temp :" + pojo.getMain().getTemp());
+                        temp_max.setText("max Temp :" + pojo.getMain().getTempMax());
+                        temp_min.setText(" min Temp :" + pojo.getMain().getTempMin());
+                        wind.setText("Speed : "+ pojo.getWind().getSpeed());
+
+
+
+
+
+//                        textView.setText("" +pojo.getCoord().getLat() + "\n"
+//                                            + pojo.getWeather().get(0).getDescription()+"\n"
+//                                            + pojo.getMain().getTemp() + "\n"
+//                                            +"max temp" + pojo.getMain().getTempMax() +"\n"
+//                                            + pojo.getWind().getSpeed());
 
                     }
 
