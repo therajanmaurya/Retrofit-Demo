@@ -2,20 +2,25 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="dapsr.retrofitdemo" >
 
+    <!-- The following defines the permissions required by the application, these are shown to the user at the time of installation. Every required feature must be declared here first. -->
     <uses-permission android:name="android.permission.INTERNET"/>
 
 
+    <!-- Application's info follows. Defines all activities, icon, theme, etc. -->
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:theme="@style/AppTheme" >
+
+        <!-- MainActivity - One and only activity in our app. -->
         <activity
             android:name=".MainActivity"
             android:label="@string/app_name" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
+                <!-- Allows our app to be shown in app launchers. -->
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
