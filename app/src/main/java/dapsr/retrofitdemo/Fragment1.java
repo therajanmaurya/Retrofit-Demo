@@ -9,7 +9,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
-
+import android.util.Log;
 import dapsr.retrofitdemo.POJO.Pojo;
 import retrofit.Callback;
 import retrofit.RetrofitError;
@@ -22,7 +22,7 @@ import retrofit.client.Response;
  */
 public class Fragment1 extends Fragment {
 
-
+        public String LOG_TAG = getClass().getSimpleName();
         PostInterface postInterface ;
 
     @Nullable
@@ -44,32 +44,23 @@ public class Fragment1 extends Fragment {
             public void onClick(View v) {
 
         postInterface = ServiceGenerator.createService(PostInterface.class , getResources().getString(R.string.base_url));
-                postInterface.getCategoryPosts(editText.getText().toString(), new Callback<Pojo>() {
+                postInterface.getWeatherData(editText.getText().toString(), new Callback<Pojo>() {
                     @Override
                     public void success(Pojo pojo, Response response) {
 
-                        lat.setText("latitude and longitude :" +  pojo.getCoord().getLat() + "and " +  pojo.getCoord().getLon() );
-                        sky.setText("Weather sky :" + pojo.getWeather().get(0).getDescription() );
+                        lat.setText("latitude and longitude :" + pojo.getCoord().getLat() + "and " + pojo.getCoord().getLon());
+                        sky.setText("Weather sky :" + pojo.getWeather().get(0).getDescription());
                         temp.setText("Temp :" + pojo.getMain().getTemp());
                         temp_max.setText("max Temp :" + pojo.getMain().getTempMax());
                         temp_min.setText(" min Temp :" + pojo.getMain().getTempMin());
-                        wind.setText("Speed : "+ pojo.getWind().getSpeed());
+                        wind.setText("Speed : " + pojo.getWind().getSpeed());
 
-
-
-
-
-//                        textView.setText("" +pojo.getCoord().getLat() + "\n"
-//                                            + pojo.getWeather().get(0).getDescription()+"\n"
-//                                            + pojo.getMain().getTemp() + "\n"
-//                                            +"max temp" + pojo.getMain().getTempMax() +"\n"
-//                                            + pojo.getWind().getSpeed());
 
                     }
 
                     @Override
                     public void failure(RetrofitError error) {
-
+                        Log.i(LOG_TAG , "fail to fetch data");
                     }
                 });
 

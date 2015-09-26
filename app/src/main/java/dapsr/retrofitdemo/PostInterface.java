@@ -21,10 +21,5 @@ public interface PostInterface {
     @GET("/weather")
     void getWeatherData(@Query("q") String q , Callback<Pojo> callback);
 
-//    @GET("/media")
-//    void getCoverImage(@Query("post_parent") int media, Callback<List<ImagePoJo>> imagePoJoCallback);
-//
-//    @GET("/posts")
-//    void getSearchContent(@Query("s") String searchString, @Query("page") int pagenumber, Callback<List<PostPoJo>> listCallbacksearch);
 
 }
