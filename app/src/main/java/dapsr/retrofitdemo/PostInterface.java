@@ -12,13 +12,14 @@ public interface PostInterface {
 
 
     /**
-     *
-     * @param category category It of the post
-     *
-     * @param listCallback  get ArrayList of All post of category It
+     * Fetch catergory posts by making a HTTP GET request along with query parameters and parses
+     * the responses onto the JSON if successful.
+     * 
+     * @param q 		Query parameter.
+     * @param callback 	The callback to be called on success/failure.
      */
     @GET("/weather")
-    void getCategoryPosts(@Query("q") String category , Callback<Pojo> listCallback);
+    void getWeatherData(@Query("q") String q , Callback<Pojo> callback);
 
 //    @GET("/media")
 //    void getCoverImage(@Query("post_parent") int media, Callback<List<ImagePoJo>> imagePoJoCallback);
