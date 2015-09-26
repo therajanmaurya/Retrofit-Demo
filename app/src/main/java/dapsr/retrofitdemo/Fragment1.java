@@ -17,6 +17,8 @@ import retrofit.client.Response;
 
 /**
  * Created by rajanmaurya on 22/9/15.
+ *
+ * Not done in workshop.
  */
 public class Fragment1 extends Fragment {
 
