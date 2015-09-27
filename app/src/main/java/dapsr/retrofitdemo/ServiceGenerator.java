@@ -30,21 +30,23 @@ public class ServiceGenerator
 
 	/**
 	 * Creates service for REST API calls with access tokens.
-	 * @param serviceClass
-	 * @param baseUrl
+	 * @param serviceClass	Type of service you need to create.
+	 * @param baseUrl		REST API's base URL.
 	 * @param <S>
 	 * @return
 	 */
 	public static <S> S createService(Class<S> serviceClass, String baseUrl)
 	{
+		// Creates new Gson obejct.
 		Gson gson = new Gson();
+
+		// Creates new RestAdapter object to create a adapter which performs the API HTTP calls
+		// and parses the JSON onto the POJO classes.
 		RestAdapter.Builder builder = new RestAdapter.Builder()
 				.setEndpoint(baseUrl)
 				.setLogLevel(RestAdapter.LogLevel.FULL).setLog(new AndroidLog("Retrofit-Demo"))
 				.setConverter(new GsonConverter(gson))
 				.setClient(new OkClient(new OkHttpClient()));
-
-
 
 		RestAdapter adapter = builder.build();
 

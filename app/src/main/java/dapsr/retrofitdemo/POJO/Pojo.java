@@ -4,7 +4,12 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Created by rajanmaurya on 22/9/15.
+ * Created by rajanmaurya on 22/9/15. Defines our Plain Old Java Object. This
+ * class defines the keys and fields which are recieved in the JSON by the REST
+ * API. Data types are according to the data received via the API and the names
+ * of the variables are exactly the same as in the JSON data. This is the root
+ * JSON object received via the API. Inner objects are defined as different class
+ * viz. Wind, Weather, etc.
  */
 public class Pojo {
 
